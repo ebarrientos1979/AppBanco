@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public class PrestamoService {
 
-    private ClienteService clienteService;
+    private ClientesService clienteService;
 
-    public PrestamoService(ClienteService clienteService) {
+    public PrestamoService(ClientesService clienteService) {
         this.clienteService = clienteService;
     }
 
@@ -30,19 +30,6 @@ public class PrestamoService {
                         .id(IdCliente)
                         .build()
         );
-
-        List<ClienteDto> clienteDto = this.clienteService.getAllCliente();//TODO: Deberiamos llamar al getClienteById
-
-        for (PrestamoDto prestamoDto: listaPrestamo) {
-            for (ClienteDto cliente: clienteDto) {
-                if(prestamoDto.getId().equals(cliente.getId())){
-                    prestamoDto.setNombre(cliente.getNombre());
-                    prestamoDto.setApellido(cliente.getApellido());
-                    prestamoDto.setEmail(cliente.getEmail());
-                    prestamoDto.setDireccion(cliente.getDireccion());
-                }
-            }
-        }
 
         return listaPrestamo;
     }
