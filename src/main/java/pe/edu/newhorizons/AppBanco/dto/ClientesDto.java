@@ -13,14 +13,12 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ClienteDto implements Serializable {
+@ToString
+public class ClientesDto implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
     private String nombre;
-    private String apellido;
-    private String email;
-    private String telefono;
     private String direccion;
-    private Date fechaNacimiento;
-    private Date fechaRegistro;
+    private String telefono;
+    private String email;
 }

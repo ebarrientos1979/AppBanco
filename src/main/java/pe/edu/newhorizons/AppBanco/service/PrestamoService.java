@@ -1,7 +1,6 @@
 package pe.edu.newhorizons.AppBanco.service;
 
 import org.springframework.stereotype.Service;
-import pe.edu.newhorizons.AppBanco.dto.ClienteDto;
 import pe.edu.newhorizons.AppBanco.dto.PrestamoDto;
 
 import java.util.ArrayList;

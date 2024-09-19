@@ -1,10 +1,8 @@
 package pe.edu.newhorizons.AppBanco.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pe.edu.newhorizons.AppBanco.dto.ClienteDto;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.newhorizons.AppBanco.dto.ClientesDto;
 import pe.edu.newhorizons.AppBanco.model.Clientes;
 import pe.edu.newhorizons.AppBanco.service.ClientesService;
 
@@ -23,4 +21,11 @@ public class ClienteController {
     public ResponseEntity<List<Clientes>> getAllCliente(){
         return ResponseEntity.ok(this.clienteService.getAllCliente());
     }
+
+    @PostMapping("/save")
+    public ResponseEntity<Clientes> saveCliente(@RequestBody Clientes cliente){
+        return ResponseEntity.ok(this.clienteService.saveCliente(cliente));
+    }
+
+    
 }
