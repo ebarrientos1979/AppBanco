@@ -28,4 +28,7 @@ public class Clientes {
 
     @Column(name="email", nullable = false, length = 255)
     private String email;
+
+    @Column(name="estado_reg", nullable = false)
+    private int estado_reg;
 }
